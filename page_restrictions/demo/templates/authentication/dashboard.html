@@ -1,0 +1,8 @@
+{% extends 'authentication/base.html' %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<div>
+    <h2>Dashboard</h2>
+    <p>Welcome, {{ user.username }}! This is a protected page.</p>
+</div>
+{% endblock %}

@@ -1,0 +1,52 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+  <head> 
+    <meta charset="UTF-8" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+    <title>Send Email</title> 
+    <link 
+      rel="stylesheet" 
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    /> 
+    <style> 
+      .container { 
+        max-width: 600px; 
+        margin-top: 50px; 
+      } 
+      .grid-form { 
+        display: grid; 
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 20px; 
+      } 
+      .grid-form .form-group { 
+        grid-column: span 2; 
+      } 
+      .btn { 
+        grid-column: span 2; 
+      } 
+    </style> 
+  </head> 
+  <body> 
+    <div class="container"> 
+      <h2>Send Email</h2> 
+ 
+      {% if messages %} 
+      <div class="alert alert-success" role="alert"> 
+        {% for message in messages %} {{ message }} {% endfor %} 
+      </div> 
+      {% endif %} 
+      <form method="POST"> 
+        {% csrf_token %} 
+        <div class="grid-form"> 
+          {{ form.as_p }} 
+          <button type="submit" class="btn btn-primary">Send Email</button> 
+        </div> 
+      </form> 
+    </div> 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+    <script 
+src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
+</script> 
+  </body> 
+</html>
+        

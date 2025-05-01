@@ -1,0 +1,17 @@
+<!-- authentication/templates/authentication/home.html --> 
+ 
+{% extends 'authentication/base.html' %} 
+{% block title %}Home{% endblock %} 
+{% block content %} 
+<div> 
+    <h2>Welcome to the Auth App</h2> 
+    <p>This is a simple authentication application built with Django.</p>  
+    {% if user.is_authenticated %} 
+        <p>You are logged in as {{ user.username }}.</p> 
+        <p><a href="{% url 'dashboard' %}">Go to Dashboard</a></p> 
+    {% else %} 
+        <p>Please <a href="{% url 'login' %}">login</a> or <a href="{% url 
+'register' %}">register</a> to access the dashboard.</p> 
+    {% endif %} 
+</div> 
+{% endblock %}
